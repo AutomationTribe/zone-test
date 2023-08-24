@@ -23,3 +23,35 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+import Utility from "../pages/Utility";
+import CheckoutPage from "../pages/CheckoutPage";
+import User from "../fixtures/user.json";
+
+let utility,checkout;
+Cypress.Commands.add("search",function(searchTerm,expectedUrl){
+
+  utility =  new Utility();
+  utility.search(searchTerm,expectedUrl);
+
+})
+
+Cypress.Commands.add("fillCheckoutForm",function(user ){
+
+    checkout = new CheckoutPage();
+
+    checkout.enterFirstName(User.personalDetails.firstName);
+    checkout.enterlastName(User.personalDetails.lastName);
+    checkout.enterEmail(User.personalDetails.email);
+    checkout.enterTelephone(User.personalDetails.telephone);
+    checkout.enterPassword(User.personalDetails.password);
+    checkout.enterConfirmPassword(User.personalDetails.password);
+
+    checkout.enterCompanyName(User.billingDetails.company);
+    checkout.enterAddress(User.billingDetails.address);
+    checkout.enterCity(User.billingDetails.city);
+    checkout.enterPostCode(User.billingDetails.postCode);
+    checkout.selectCountry(User.billingDetails.country);
+    checkout.selectState(User.billingDetails.state);
+
+})

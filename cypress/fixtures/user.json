@@ -1,0 +1,17 @@
+{
+    "personalDetails" : {
+        "firstName" : "Murray",
+        "lastName" : "Ataga",
+        "email" : "murr7q1@yopmail.com",
+        "telephone" : "07060000000",
+        "password" : "Pass123"
+    },
+    "billingDetails":{
+        "company" : "zone",
+        "address": "somewhere in africa",
+        "city":"lagos",
+        "postCode": "101250",
+        "country" :"Nigeria",
+        "state":"Lagos"
+    }
+}
